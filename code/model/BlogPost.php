@@ -625,6 +625,8 @@ class BlogPost extends Page {
 	protected function onBeforeWrite() {
 		parent::onBeforeWrite();
 
+        $this->Locale = Translatable::get_current_locale();
+
 		if(!$this->PublishDate) {
 			$this->PublishDate = SS_Datetime::now()->getValue();
 		}
